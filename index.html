@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 и CSS3 сайт</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>BMW</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>𝘽𝙈𝙒 𝙈5 𝙀60</h1>
+    <h3 class="niga">В жизни можно поменять многое, но BMW — только на BMW</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>BMW M5 E60</h2>
+      <div class="catalog__column catalog__column_half">
+        <div class="catalog__column catalog__column_half">
+          <dl class="list-values list-values_view_ext clearfix">
+            <dt class="list-values__label">Объем</dt>
+            <dd class="list-values__value">5.0 л</dd>
+            <dt class="list-values__label">Мощность</dt>
+            <dd class="list-values__value">507 л.с.</dd>
+            <dt class="list-values__label">Коробка</dt>
+            <dd class="list-values__value">механика</dd>
+            <dt class="list-values__label">Тип двигателя</dt>
+            <dd class="list-values__value">бензин</dd>
+          </dl>
+        </div>
+        <div class="catalog__column catalog__column_half">
+          <dl class="list-values list-values_view_ext clearfix">
+            <dt class="list-values__label">Топливо</dt>
+            <dd class="list-values__value">АИ-98</dd>
+            <dt class="list-values__label">Привод</dt>
+            <dd class="list-values__value">задний</dd>
+            <dt class="list-values__label">Разгон</dt>
+            <dd class="list-values__value">4.5 с</dd>
+            <dt class="list-values__label">Расход</dt>
+            <dd class="list-values__value">14.4 л</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="text">
+      <iframe width="660" height="415" src="https://www.youtube.com/embed/qte6g247t5Q" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>двигатель</h2>
+    <h4>с нами все проще</h4>
+
+    <div class="img">
+      <img src="https://avtoexperts.ru/wp-content/uploads/GpF9DFm9.jpg" alt="">
+      <span>двигатель BMW M5 (E60)</span>
+    </div>
+    <div class="img">
+      <img src="https://vvm-auto.ru/images/VVM-AUTO/OPIT_EKSPLYATACI/BMW/BMW-M5-E60/BMW-M5-E60-7.jpg" alt="">
+      <span>цаца</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center>
+      <h5>Обратная связь</h5>
+    </center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+      <input type="email" placeholder="Введите email" name="email" id="email"><br>
+      <label for="message">Сообщение <span>*</span></label><br>
+      <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+      <div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title">Оплата</span><br>
+      <span class="heading">Как будет проходит оплата?</span>
+      <p>покупка наличной валюты</p>
+    </div>
+    <div>
+      <span class="title">Информация</span><br>
+      <span class="heading">Что входит в услуги сервиса</span>
+      <p>Качество, эффективность и инновационный потенциал составляют основу сервисной службы BMW, которой наши клиенты
+        могут доверять – сегодня и в будущем. BMW уже на этапе проектирования новых автомобилей думает о будущих услугах
+        и сервисных концепциях и направляет свои усилия на обеспечение высшего качества обслуживания вашего BMW. Ради
+        вашего полного удовольствия за рулем..</p>
+    </div>
+    <div>
+      <span class="heading">Какие гарантии есть</span>
+      <p>На все новые автомобили BMW предоставляется гарантия продолжительностью 2 года независимо от пробега. Гарантия распространяется на весь автомобиль за исключением изнашивающихся деталей и действует с момента передачи автомобиля первому собственнику, если иное не предусмотрено договором купли-продажи..</p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if ($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+
+</html>
